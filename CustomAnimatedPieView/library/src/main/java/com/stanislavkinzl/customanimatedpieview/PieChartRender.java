@@ -66,7 +66,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
     private DrawMode mDrawMode = DrawMode.DRAW;
     //-----------------------------------------draw area-----------------------------------------
     private RectF pieBounds;
-    private float pieRadius;
+    public float pieRadius;
     private int maxDescTextLength;
     private volatile boolean isInAnimating;
     //-----------------------------------------anim area-----------------------------------------
