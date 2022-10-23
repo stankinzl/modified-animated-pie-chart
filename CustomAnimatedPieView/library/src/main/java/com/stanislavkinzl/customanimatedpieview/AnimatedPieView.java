@@ -23,9 +23,9 @@ import com.stanislavkinzl.customanimatedpieview.utils.UIUtil;
 public class AnimatedPieView extends View implements IPieView {
     protected final String TAG = this.getClass().getSimpleName();
 
-    AnimatedPieViewConfig mConfig;
-    PieChartRender mPieChartRender;
-    PieManager mPieManager;
+    public AnimatedPieViewConfig mConfig;
+    public PieChartRender mPieChartRender;
+    public PieManager mPieManager;
 
     public AnimatedPieView(Context context) {
         this(context, null);

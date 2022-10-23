@@ -59,7 +59,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
 
     }
 
-    List<PieInfoWrapper> mDataWrappers;
+    public List<PieInfoWrapper> mDataWrappers;
     private List<PieInfoWrapper> mCachedDrawWrappers;
     private PathMeasure mPathMeasure;
     private AnimatedPieViewConfig mConfig;
@@ -1009,7 +1009,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
             return false;
         }
 
-        void handleUp(PieInfoWrapper touchWrapper) {
+        public void handleUp(PieInfoWrapper touchWrapper) {
             setDrawMode(DrawMode.TOUCH);
             if (touchWrapper.equals(floatingWrapper)) {
                 //如果点的是当前正在浮起的wrapper，则移到上一个，当前的置空

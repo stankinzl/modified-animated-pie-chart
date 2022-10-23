@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by 大灯泡 on 2018/2/1.
  */
-class PieInfoWrapper implements Serializable {
+public class PieInfoWrapper implements Serializable {
 
     private static final long serialVersionUID = -8551831728967624659L;
 
@@ -47,7 +47,7 @@ class PieInfoWrapper implements Serializable {
     private PieInfoWrapper preWrapper;
     private PieInfoWrapper nextWrapper;
 
-    PieInfoWrapper(IPieInfo pieInfo) {
+    public PieInfoWrapper(IPieInfo pieInfo) {
         if (pieInfo == null) {
             throw new NullPointerException("pieinfo must not be null");
         }
