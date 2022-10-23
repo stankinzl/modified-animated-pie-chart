@@ -681,7 +681,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
             if (dataWrapper.getPieOption() != null && dataWrapper.getPieOption()
                     .isDefaultSelected()) {
                 hasRenderDefaultSelected = true;
-                mTouchHelper.handleUp(dataWrapper);
+                mTouchHelper.handleUp(dataWrapper, true);
                 break;
             }
         }
@@ -1001,7 +1001,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
                 case MotionEvent.ACTION_UP:
                     PieInfoWrapper touchWrapper = pointToPieInfoWrapper(touchX, touchY);
                     if (touchWrapper == null) return false;
-                    handleUp(touchWrapper);
+                    handleUp(touchWrapper, false);
 
                     return true;
             }
@@ -1009,7 +1009,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
             return false;
         }
 
-        public void handleUp(PieInfoWrapper touchWrapper) {
+        public void handleUp(PieInfoWrapper touchWrapper, Boolean ignoreSelectListener) {
             setDrawMode(DrawMode.TOUCH);
             if (touchWrapper.equals(floatingWrapper)) {
                 //如果点的是当前正在浮起的wrapper，则移到上一个，当前的置空
@@ -1031,7 +1031,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
                 callInvalidate();
             }
 
-            if (mConfig.getSelectListener() != null) {
+            if (mConfig.getSelectListener() != null && !ignoreSelectListener) {
                 mConfig.getSelectListener()
                         .onSelectPie(touchWrapper.getPieInfo(), touchWrapper.equals(floatingWrapper));
             }
