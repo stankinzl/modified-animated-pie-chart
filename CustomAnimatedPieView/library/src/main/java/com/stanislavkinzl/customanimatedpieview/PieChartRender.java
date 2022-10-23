@@ -73,7 +73,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
     private PieInfoWrapper mDrawingPie;
     private float animAngle;
     //-----------------------------------------other-----------------------------------------
-    private TouchHelper mTouchHelper;
+    public TouchHelper mTouchHelper;
     private LegendsHelper mLegendsHelper;
     private RenderAnimation mRenderAnimation;
     private volatile boolean animHasStart;
@@ -834,7 +834,7 @@ public class PieChartRender extends BaseRender implements ITouchRender {
         }
     }
 
-    private class TouchHelper {
+    public class TouchHelper {
         //因为判断点击时是判断内圆和外圆半径，可能很苛刻，所以这里可以考虑增加点击范围
         private int expandClickRange;
         private float centerX;
